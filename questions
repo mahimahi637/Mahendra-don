@@ -90,3 +90,4 @@ Perform a terraform import of those resources and remove the terraform code that
 17. What are the componentes for terraform architecture?
 
 A. erraform has two important components: Terraform Core and Terraform Plugins. Terraform Core oversees the reading and interpolation of resource plan executions, resource graphs, state management features and configuration files. Core is composed of compiled binaries written in the Go programming language.
+18. mahendra
