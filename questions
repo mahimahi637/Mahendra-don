@@ -1,0 +1,92 @@
+1. What is the diffence between git fetch and git pull?
+A. Git Fetch: When you fetch, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. 
+   However, it does not merge them with your current branch. This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. To integrate the commits into your current branch, you must use merge afterwards.
+   command: git fetch
+   Git Pull: A git pull is what you would do to bring a local branch up-to-date with its remote version, while also updating your other remote-tracking branches.
+   Command: git pull
+   
+2. What is the cherry-pick?
+A. Cherry-picking in Git stands for applying some commit from one branch into another branch. In case you made a mistake and committed a change into the wrong branch, but do not want to merge the whole branch. 
+You can revert the commit and apply it on another branch.
+git cherry-pick <commit id>  
+
+3. Difference between git stash apply and git stash pop?
+A. git stash pop applies the top stashed element and removes it from the stack.
+   git stash apply does the same, but leaves it in the stash stack.
+   
+4. How to revert bad commit which is alredy pushed?
+A. If you want to revert the last commit just do git revert <unwanted commit hash> ; then you can push this new commit, which undid your previous commit. To fix the detached head do git checkout <current branch>
+
+5. How to remove a file from index with out removing from local file system?
+A. My initial commit contained some log files. I've added *log to my .gitignore, and now I want to remove the log files from my repository.
+  git rm mylogfile.log
+  git add .
+  git commit -m "delete file"
+  git push
+6. what is git rebase?
+A. Rebasing is the process of moving or combining a sequence of commits to a new base commit. 
+   Rebasing is most useful and easily visualized in the context of a feature branching workflow.
+   git rebase <branch name>  
+7. How authentication controleed in IAM Service?
+A. To authenticate from the console as a root user, you must sign in with your email address and password. As an IAM user, provide your account ID or alias, and then your user name and password. 
+   To authenticate from the API or AWS CLI, you must provide your access key and secret key.
+8. What do you know auto scalling?
+A. Autoscaling is a cloud computing feature that enables organizations to scale cloud services such as server capacities or virtual machines up or down automatically,
+   based on defined situations such as traffic ir utilization levels.
+   
+9 . What is the Clod watch?
+A. Amazon CloudWatch allows you to collect, access, and correlate this data on a single platform from across all your AWS resources, applications, and services running on AWS and on-premises, helping you break down data silos to gain system-wide visibility and quickly resolve issues.
+10. What is the Cloudfront?
+A. Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations. 
+
+11. Expalin about Route53?
+A. Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination: domain registration, DNS routing, and health checking.
+Plocies:
+Simple routing policy – Use for a single resource that performs a given function for your domain, for example, a web server that serves content for the example.com website.
+
+Failover routing policy – Use when you want to configure active-passive failover.
+
+Geolocation routing policy – Use when you want to route traffic based on the location of your users.
+
+Geoproximity routing policy – Use when you want to route traffic based on the location of your resources and, optionally, shift traffic from resources in one location to resources in another.
+
+Latency routing policy – Use when you have resources in multiple AWS Regions and you want to route traffic to the Region that provides the best latency with less round-trip time.
+
+Multivalue answer routing policy – Use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random.
+
+Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify.
+
+12. Diffrence between avalibilty zone and region?
+A. AWS Regions are large and widely dispersed into separate geographic locations. Availability Zones are distinct locations within an AWS Region that are engineered to be isolated from failures in other Availability Zones.
+13. What is the containerzation?
+A. Containerization is a form of virtualization where applications run in isolated user spaces, called containers, while using the same shared operating system (OS). A container is essentially a fully packaged and portable computingEverything an application needs to run—its binaries, libraries, configuration files, and dependencies—is encapsulated and isolated in its container. The container itself is abstracted away from the host OS, with only limited access to underlying resources—much like a lightweight virtual machine (VM). As a result, the containerized application can be run on various types of infrastructure—on bare metal, within VMs, and in the cloud—without needing to refactor it for each environment
+14. Tell me about micro service archtecture?
+A.  Microservices - also known as the microservice architecture - is an architectural style that structures an application as a collection of services that are
+
+Highly maintainable and testable
+Loosely coupled
+Independently deployable
+Organized around business capabilities
+Owned by a small team
+The microservice architecture enables the rapid, frequent and reliable delivery of large, complex applications. It also enables an organization to evolve its technology stack.
+
+15. How can we assign a static ip to ELB?
+A. https://aws.amazon.com/premiumsupport/knowledge-center/elb-attach-elastic-ip-to-public-nlb/
+
+16. How to duplicate resource error ignrole during terraform apply?
+A. he errors are returned by the API the Terraform provider is calling.
+
+Possible causes of this could be:
+
+you ( or someone else ) have executed your Terraform code and you don't have a shared / updated state
+someone have created them manually
+a Terraform destroy failed in a way that deleted the resources for the API but failed to save the update state
+solutions depends on what you need. You can:
+
+delete those resources from your Terraform code to stop managing them with it
+delete those resources from the API ( cloud provider ) and recreate them with Terraform
+Perform a terraform import of those resources and remove the terraform code that is trying to recreate them (NOT RECOMMENDED)
+
+17. What are the componentes for terraform architecture?
+
+A. erraform has two important components: Terraform Core and Terraform Plugins. Terraform Core oversees the reading and interpolation of resource plan executions, resource graphs, state management features and configuration files. Core is composed of compiled binaries written in the Go programming language.
